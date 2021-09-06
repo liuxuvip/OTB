@@ -174,7 +174,7 @@ public:
   //     return AccessorType();
   //   }
 
-  //   /** Return the Pixel Accesor object */
+  //   /** Return the Pixel Accessor object */
   //   const AccessorType GetPixelAccessor( void ) const
   //   {
   //     return AccessorType();
@@ -238,11 +238,19 @@ public:
   virtual VectorType GetLowerLeftCorner(void) const;
   virtual VectorType GetLowerRightCorner(void) const;
 
-  /** Get image keyword list */
+  /** Get image keyword list 
+  * \deprecated
+  */
   virtual ImageKeywordlistType GetImageKeywordlist(void);
 
+  /** Get image keyword list 
+  * \deprecated
+  */
   virtual const ImageKeywordlistType GetImageKeywordlist(void) const;
 
+  /** Set the image keywordlist 
+    \deprecated
+   */
   virtual void SetImageKeywordList(const ImageKeywordlistType& kwl);
 
   void PrintSelf(std::ostream& os, itk::Indent indent) const override;
@@ -281,7 +289,7 @@ namespace otb
 {
 
 // Prevent implicit instantiation of common types to improve build performance
-// Explicit instanciations are provided in the .cxx
+// Explicit instantiations are provided in the .cxx
 extern template class OTBImageBase_EXPORT_TEMPLATE Image<unsigned int, 2>;
 extern template class OTBImageBase_EXPORT_TEMPLATE Image<int, 2>;
 extern template class OTBImageBase_EXPORT_TEMPLATE Image<unsigned char, 2>;

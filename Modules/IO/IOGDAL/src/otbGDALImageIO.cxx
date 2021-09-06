@@ -68,9 +68,9 @@ public:
   {
   }
   GDALDataTypeWrapper(const GDALDataTypeWrapper& w)
-  {
-    pixType = w.pixType;
-  }
+    :
+    pixType(w.pixType)
+  {}
   GDALDataTypeWrapper& operator=(GDALDataTypeWrapper w)
   {
     pixType = w.pixType;
@@ -1251,7 +1251,7 @@ void GDALImageIO::Write(const void* buffer)
   }
 }
 
-/** TODO : Methode WriteImageInformation non implementee */
+/** TODO : Method WriteImageInformation not implemented */
 void GDALImageIO::WriteImageInformation()
 {
 }
